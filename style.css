@@ -1,0 +1,209 @@
+html,body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Anonymous Pro', monospace;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #f4f4f4;
+    font-weight: 400;
+    font-style: normal;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root{
+    --white: #F7F0F0;
+    --light-green: #54EABC;
+    --black: #484349;
+    --red: #FF1F2E;
+    --dark-green: #218380;
+}
+
+/* REUSABLE */
+
+.no-gap{
+    margin: 0;
+    padding: 0;
+    gap: 0;
+}
+.flex{
+    display: flex;
+}
+
+.color-green{
+    color: var(--light-green);
+}
+
+/* HEADER */
+
+header{
+    height: 15vh;
+    width:100%;
+    background-color: #484349;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    
+}
+
+header h1{
+    color: var(--white);
+    font-weight: 400;
+    z-index: 99;
+}
+
+.logo{
+    height: 80px;
+    width: 80px;
+    z-index: 99;
+}
+
+
+.hamburger{
+    position: relative;
+    display: block;
+    width: 45px;
+    cursor: pointer;
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+    z-index: 99;
+}
+
+.hamburger .bar, .hamburger:after, .hamburger:before{
+    content:'';
+    display: block;
+    width: 100%;
+    height:5px;
+    background-color: var(--white);
+    margin: 6px 0px;
+    transition:0.4s;
+}
+.hamburger.is-active:before{
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+.hamburger.is-active .bar{
+    opacity: 0;
+}
+.hamburger.is-active:after{
+    transform: rotate(45deg) translate(-9px, -6px);
+}
+
+.mobile-nav{
+    display: block;
+    position: fixed;
+    top:0;
+    left: 100%;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 98;
+    background-color: var(--black);
+    padding-top: 15vh;
+    transition: 0.4s;
+}
+.mobile-nav.is-active{
+    left: 0;
+}
+.mobile-nav a{
+    display: block;
+    text-decoration: none;
+    color: var(--white);
+    font-family: 'Anonymous Pro', monospace;
+    text-align: center;
+    padding: 8px;
+    width: fit-content;
+    margin: 0 auto 16px;
+}
+.mobile-nav a:hover{
+    cursor: pointer;
+    color: var(--dark-green);
+    transform: 0.4s;
+}
+
+/* MAIN */
+
+.background-image{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+
+}
+
+main{
+    background-image: url("/photos/02-night.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+
+    
+}
+
+.landing-page-title{
+    color: var(--white);
+    width: 90%;
+    height:15vh;
+    text-align: center;
+    margin-top: 35vh;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    
+}
+
+
+
+
+
+
+
+
+
+
+/* FONTS */
+
+.anonymous-pro-regular {
+    font-family: "Anonymous Pro", monospace;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .anonymous-pro-bold {
+    font-family: "Anonymous Pro", monospace;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  .anonymous-pro-regular-italic {
+    font-family: "Anonymous Pro", monospace;
+    font-weight: 400;
+    font-style: italic;
+  }
+  
+  .anonymous-pro-bold-italic {
+    font-family: "Anonymous Pro", monospace;
+    font-weight: 700;
+    font-style: italic;
+  }
+
+
+
+.roboto-mono-font {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+  
