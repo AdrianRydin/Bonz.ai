@@ -11,6 +11,7 @@ html,body{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 :root{
@@ -20,6 +21,35 @@ html,body{
     --black-transparent: rgba(72, 67, 73, 0.5);
     --red: #FF1F2E;
     --dark-green: #218380;
+}
+
+/* BEM */
+
+.button{
+    background-color: var(--dark-green);
+    width: 60%;
+    height: 3rem;
+    color: var(--white);
+    border-radius: 999px;
+    border: none;
+    font-size: 16px;
+    margin-bottom: 4rem;
+    cursor: pointer;
+}
+
+.booking-block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90%;
+    background-color: #d9d9d9;
+    text-align: center;
+    margin-top: 2rem;
+}
+.booking-block img{
+    width: 90%;
+    object-fit:fill
 }
 
 /* REUSABLE */
@@ -42,6 +72,9 @@ html,body{
     margin-right: 1rem;
 }
 
+.none{
+    display: none;
+}
 /* HEADER */
 
 header{
@@ -106,7 +139,7 @@ header h1{
     left: 100%;
     width: 100%;
     min-height: 100vh;
-    z-index: 98;
+    z-index: 99;
     background-color: var(--black);
     padding-top: 15vh;
     transition: 0.4s;
@@ -130,7 +163,19 @@ header h1{
     transform: 0.4s;
 }
 
-/* MAIN */
+.desktop-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    display: none;
+}
+.desktop-nav a{
+    text-decoration: none;
+    color: var(--white);
+}
+
+/* MAIN LANDINGPAGE */
 
 .background-image{
     position: fixed;
@@ -167,25 +212,15 @@ main{
     flex-direction: column;
     align-items: center;
     z-index: 98;
-    border: 1px solid red;
 }
 
 .landing-page-title h2{
     text-shadow: -1px -1px 0 var(--black), 1px -1px 0 var(--black), -1px 1px 0 var(--black), 1px 1px 0 var(--black);
 }
 
-
-
-
-.button{
-    background-color: var(--dark-green);
-    width: 60%;
-    height: 3rem;
-    color: var(--white);
-    border-radius: 999px;
-    border: none;
-    font-size: 16px;
-    margin-bottom: 4rem;
+.button button{
+    width: 100%;
+    height: 100%;
 }
 
 .about-us{
@@ -198,8 +233,153 @@ main{
     height: 100vh;
 }
 
+/* MAIN BOOKING */
+
+.destination-container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.booking-search-bar-container{
+    width: 60%;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.booking-search-bar{
+    border-radius: 9999px;
+    border: none;
+    background-color: #D9D9D9;
+    width: 100%;
+    height:3rem;
+    padding-right: 40px;
+    box-sizing: border-box;
+
+}
+.search-icon{
+    position: absolute;
+    right: 10px;
+    top:50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    pointer-events: none;
+    color: var(--black);
+}
+.filter-container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 2rem;
+}
+.filter-container h2{
+    font-weight: 400;
+}
+
+.booking-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    height: fit-content;
+}
 
 
+/* FOOTER */
+
+footer{
+    background-color: var(--black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: white;
+    text-align: center;
+    height: 90vh;
+}
+
+.footer-logo{
+    width: 20%;
+}
+
+footer h1{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+footer h2{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+}
+
+
+
+
+@media screen and (min-width: 576px){
+    .booking-search-bar-container{
+        width: 50%;
+    }
+}
+@media screen and (min-width: 768px){
+    .booking-search-bar-container{
+        width: 40%;
+    }
+
+}
+
+@media screen and (min-width: 992px){
+    header a{
+        font-size: 1.2rem;
+    }
+    .mobile-nav, .hamburger{
+        display: none;
+    }
+    .desktop-nav{
+        display: flex;
+    }
+    .button{
+        width: 33%;
+    }
+    .about-us{
+        width: 60vh;
+    }
+    footer{
+        height: 50vh;
+        display: flex;
+        flex-direction: row;
+    }
+    .footer-logo{
+        width: 10%;
+    }
+
+    /* BOOKING */
+
+    .booking-search-bar-container{
+        width: 30%;
+    }
+    
+    .booking-block{
+        flex-direction: column;
+        width: 30%;
+        background-color: #d9d9d9;
+        text-align: center;
+        margin-top: 2rem;
+    }
+    .booking-block img{
+        width: 90%;
+        object-fit:fill
+    }
+    .booking-container{
+        flex-direction: row;
+        padding: 1rem;
+    }
+}
 
 
 /* FONTS */
@@ -236,4 +416,11 @@ main{
   font-weight: 600;
   font-style: normal;
 }
-  
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
