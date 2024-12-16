@@ -102,14 +102,14 @@ header h1{
     z-index: 99;
 }
 
-.logo{
+.header__logo-img{
     height: 80px;
     width: 80px;
     z-index: 99;
 }
 
 
-.hamburger{
+.header__hamburger-container{
     position: relative;
     display: block;
     width: 45px;
@@ -121,7 +121,7 @@ header h1{
     z-index: 99;
 }
 
-.hamburger .bar, .hamburger:after, .hamburger:before{
+.header__hamburger-container .header__hamburger-bar, .header__hamburger-container:after, .header__hamburger-container:before{
     content:'';
     display: block;
     width: 100%;
@@ -130,17 +130,17 @@ header h1{
     margin: 6px 0px;
     transition:0.4s;
 }
-.hamburger.is-active:before{
+.header__hamburger-container.is-active:before{
     transform: rotate(-45deg) translate(-9px, 6px);
 }
-.hamburger.is-active .bar{
+.header__hamburger-container.is-active .header__hamburger-bar{
     opacity: 0;
 }
-.hamburger.is-active:after{
+.header__hamburger-container.is-active:after{
     transform: rotate(45deg) translate(-9px, -6px);
 }
 
-.mobile-nav{
+.headernav__headernav-mobile{
     display: block;
     position: fixed;
     top:0;
@@ -152,10 +152,10 @@ header h1{
     padding-top: 15vh;
     transition: 0.4s;
 }
-.mobile-nav.is-active{
+.headernav__headernav-mobile.is-active{
     left: 0;
 }
-.mobile-nav a{
+.headernav__headernav-mobile a{
     display: block;
     text-decoration: none;
     color: var(--white);
@@ -165,20 +165,20 @@ header h1{
     width: fit-content;
     margin: 0 auto 16px;
 }
-.mobile-nav a:hover{
+.headernav__headernav-mobile a:hover{
     cursor: pointer;
     color: var(--dark-green);
     transform: 0.4s;
 }
 
-.desktop-nav{
+.headernav__headernav-desktop{
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 1.5rem;
     display: none;
 }
-.desktop-nav a{
+.headernav__headernav-desktop a{
     text-decoration: none;
     color: var(--white);
 }
@@ -195,7 +195,7 @@ header h1{
 
 }
 
-/* main{
+main{
 
     height: fit-content;
     width: 100%;
@@ -204,7 +204,7 @@ header h1{
     align-items: center;
 
     
-} */
+}
 
 .landing-page{
     background-image: url("/photos/09-night.jpg");
@@ -375,10 +375,10 @@ footer h2{
     header a{
         font-size: 1.2rem;
     }
-    .mobile-nav, .hamburger{
+    .headernav__headernav-mobile, .header__hamburger-container{
         display: none;
     }
-    .desktop-nav{
+    .headernav__headernav-desktop{
         display: flex;
     }
     .button{
